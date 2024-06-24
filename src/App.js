@@ -1,8 +1,7 @@
-import Costs from "./components/Costs";
+import Costs from "./components/Costs/Costs";
 
 
-
-function App() {
+const App = () => {
 
     const costs = [
         {
@@ -22,12 +21,12 @@ function App() {
         }
     ]
 
-  return (
-    <div>
-      <h1>Начнем изучение React</h1>
-        <Costs costs={costs} />
-    </div>
-  );
+    return (
+        <div>
+            <h1>Начнем изучение React</h1>
+            <Costs costs={costs}/>
+        </div>
+    );
 }
 
 export default App;
