@@ -1,8 +1,10 @@
 import './Costs.css'
-import CostItem from "./CostItem";
+// import CostItem from "./CostItem";
 import Card from '../UI/Card'
 import CostFilter from './CostFilter';
 import {useState} from 'react'
+import CostList from './CostList';
+import CostDiagram from "./CostDiagram";
 
 const Costs = (props) => {
 
@@ -19,19 +21,13 @@ const Costs = (props) => {
         }
     )
 
+
     return (
         <div>
             <Card className='costs'>
                 <CostFilter year={selectedYear} onChangeYear={yearChangeHandler}/>
-                {/*{console.log(props)}*/}
-                {filteredCosts.map((prop) => (
-                    <CostItem
-                        key={prop.id}
-                        date={prop.date}
-                        description={prop.description}
-                        amount={prop.amount}
-                    />
-                ))}
+                <CostDiagram costs={filteredCosts} />
+                <CostList costs={filteredCosts}/>
 
 
             </Card>
